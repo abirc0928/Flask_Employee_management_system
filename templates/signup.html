@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+  <div class="w-50 p-3 m-auto mt-5">
+    <form method="POST" class="form-group">
+      {{ form.hidden_tag() }}
+      {{ form.username.label(class='form-label') }}
+      {{ form.username(class='form-control') }}
+      {{ form.email.label(class='form-label') }}
+      {{ form.email(class='form-control') }}
+      {{ form.password.label(class='form-label') }}
+      {{ form.password(class='form-control') }}
+      {{ form.confirm_password.label(class='form-label') }}
+      {{ form.confirm_password(class='form-control') }}
+      <button type="submit" class="btn btn-primary mt-3">{{ form.submit.label }}</button>
+    
+    </form>
+    <br/><span><a href="{{ url_for('login') }}">Go to login</a></span>
+  </div>
+{% endblock %}
